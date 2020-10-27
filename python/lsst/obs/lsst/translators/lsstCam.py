@@ -124,7 +124,10 @@ class LsstCamTranslator(LsstBaseTranslator):
             if self._is_filter_empty(filter2):
                 filter2 = None
 
-        if filter2:
+        # if either filter is unknown, so is the combination
+        if physical_filter == "UNKNOWN" or filter2 == "UNKNOWN":
+            physical_filter = "UNKNOWN"
+        elif filter2:
             physical_filter = f"{physical_filter}{FILTER_DELIMITER}{filter2}"
 
         return physical_filter
