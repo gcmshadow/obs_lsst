@@ -59,7 +59,7 @@ class PhosimParseTask(LsstCamParseTask):
         return "S"
 
 
-class PhosimEimgParseTask(PhosimParseTask):
+class PhosimEimgParseTask(LsstCamParseTask):
     """Parser suitable for phosim eimage data.
     """
 
